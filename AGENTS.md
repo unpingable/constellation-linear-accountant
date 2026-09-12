@@ -16,6 +16,22 @@ cargo clippy --all-targets -- -D warnings
 cargo fmt --check
 ```
 
+For public documentation, call the repository **Constellation Linear
+Accountant** and link
+`https://github.com/unpingable/constellation-linear-accountant`. Preserve the
+existing crate and `la_cli` names. Publication does not thaw the reference
+boundary or authorize a new consumer surface.
+
+Before campaign work, identify the selected campaign, exact source revision,
+working directory, output locations, and owning authority boundary. A plan,
+receipt, or passing test does not authorize external effects. For a prolonged
+run, use the campaign-approved durable producer and persist an inspection and
+resume checkpoint before waiting. A fresh supervisor must inspect the original
+producer and evidence and resume it when possible; never restart or replace it
+merely because supervision was interrupted. If no approved durable mechanism
+exists, stop before launch and record that limitation rather than implying the
+run can survive supervisor loss.
+
 Primarily a library crate others call. One thin transport binary exists,
 `la_cli` (added 2026-06-16 on the first consumer trigger — the Agent Governor
 bootstrap-lab effect gate). It is a stdin/stdout line protocol over the existing
@@ -109,9 +125,9 @@ the others.
 
 | Role | What it holds | Repo |
 |------|---------------|------|
-| Agent Governor | governs the request before it becomes spend (eligibility) | `agent_gov` |
+| Constellation AG | governs the request before it becomes spend (eligibility) | `constellation-ag` |
 | Wicket / WLP | admission gate / transport envelope | `wicket`, `wlp` |
-| NQ | witness / testimony | `nq` |
+| Constellation NQ | witness / testimony | `constellation-nq` |
 | Nightshift | temporal operator / revalidation scheduler | `nightshift` |
 | **Linear Accountant** | **conserves and consumes spendability (this repo)** | `linearaccountant` |
 

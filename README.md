@@ -1,5 +1,10 @@
 # Linear Accountant
 
+Public repository name: **Constellation Linear Accountant**
+(`constellation-linear-accountant`). The crate and transport binary retain their
+current names and interfaces. See [HOWTO.md](HOWTO.md) for a bounded local check.
+Public source: <https://github.com/unpingable/constellation-linear-accountant>.
+
 > **Status (2026-07-26): the Linear-Accounting / Spendability office —
 > frozen reference boundary, separately instantiated, not part of the
 > current operational vertical.** This repository owns the jurisdiction "is
