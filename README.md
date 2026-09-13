@@ -5,6 +5,11 @@ Public repository name: **Constellation Linear Accountant**
 current names and interfaces. See [HOWTO.md](HOWTO.md) for a bounded local check.
 Public source: <https://github.com/unpingable/constellation-linear-accountant>.
 
+Staying within a spending allowance does not necessarily leave enough capacity
+for mandatory obligations. The [accounting / residual-viability bridge](docs/working/ACCOUNTING-VIABILITY-BRIDGE.md)
+explains the bounded formal relationship and the reserve-admission behavior
+that is **not** implemented by the current stack.
+
 > **Status (2026-07-26): the Linear-Accounting / Spendability office —
 > frozen reference boundary, separately instantiated, not part of the
 > current operational vertical.** This repository owns the jurisdiction "is

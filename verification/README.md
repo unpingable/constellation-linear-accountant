@@ -37,6 +37,12 @@ implementation matches the model on randomized inputs. Both are checkable, local
 
 ## Checking it
 
+For the separate question of whether spending leaves mandatory obligations
+affordable, see the [accounting / residual-viability bridge](../docs/working/ACCOUNTING-VIABILITY-BRIDGE.md).
+It is a formalized invariant candidate connected to bounded constituent
+semantics, not an implemented cross-stack reserve controller or an extension
+of this ledger's runtime guarantees.
+
 ```sh
 # Proofs (exit 0 == all theorems check):
 lean verification/Ledger.lean
