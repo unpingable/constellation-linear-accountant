@@ -16,7 +16,8 @@ that is **not** implemented by the current stack.
 > there conserved capacity, and is it burned exactly once?" — with the
 > conservation core machine-checked in Lean (`verification/`). It has
 > **never been absorbed**: Docket's reservations/consumption/settlement and
-> AG ng's one-use decision burn are domain-local exactly-once disciplines,
+> Constellation AG's one-use decision burn and Docket's local custody
+> consumption are domain-local exactly-once disciplines,
 > not conservation accounting; unique here remain conservation over a
 > finite stock, mint≠burn capability separation (`SpendCapability`), and
 > replay-as-noop. Consumers are the classic lineage (AG classic `la_cli`
