@@ -133,3 +133,7 @@ cross-check the conservation identity and replay-refusal — hardening, not thaw
 ## License
 
 Licensed under [Apache-2.0](LICENSE).
+
+## Beta work planning
+
+See the [current beta work plan](docs/BETA-WORK.md) for owned requirements, exclusions, dependencies and GitHub issues. Plan publication does not start implementation or transfer qualification.
