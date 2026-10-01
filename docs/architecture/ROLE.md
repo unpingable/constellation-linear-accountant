@@ -33,7 +33,7 @@ Roles, not repos. Several may co-reside in one process today; the boundary is in
 | Role | Owns | Explicitly does NOT |
 |---|---|---|
 | **Wicket** | admission gate / receiver policy kernel; decides if a claim/request is *admissible* | admission ≠ spendable-mutation authority |
-| **WLP** | transport envelope / claim shape; carries claims, witnesses, admissions, token *references* | the envelope is not money |
+| **WLP** *(retired 2026-09-20)* | was: transport envelope / claim shape. No named consumer; there is no current WLP compatibility obligation. The role slot stays open; WLP does not fill it | the envelope is not money |
 | **Agent Governor** | semantic governor; **governs the request *before* it becomes spend** — actor/scope/standing/evidence/policy/posture → *eligible to ask for a spendability class*; shapes the budget request; *requests* spendability. Necessary as a **role, not that exact repo forever** | may not mint, consume, or set budget |
 | **Linear Accountant** | spendable capacity: budgets, leases, quotas, one-shot tokens, retry allowances, blast-radius slots, idempotency keys; mints & consumes exactly-once | — |
 | **Execution layer** | performs the effect; consumes token/lease/budget atomically; emits receipt | may not self-issue capacity |

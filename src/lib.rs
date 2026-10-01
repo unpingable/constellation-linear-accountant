@@ -208,7 +208,8 @@ pub enum RevocationDecision {
 
 /// A single-use, scoped, target/effect-class-bound, expiring **bounded execution capability** — the
 /// "key" the receiver gate validates and burns. Minted by LA against a granted token; it binds the
-/// token's opaque `eligibility_reference` verbatim. This is the artifact WLP spec'd by omission; it
+/// token's opaque `eligibility_reference` verbatim. This is the artifact WLP spec'd by omission
+/// (WLP is retired — there is no current WLP compatibility obligation; the lineage is kept, the obligation is not); it
 /// lives here (the minting authority), never in the consumer.
 #[derive(Clone, Debug, PartialEq)]
 pub struct SpendCapability {
