@@ -1,0 +1,8 @@
+#!/bin/sh
+# Creates the root-only store directory only. Never enrolls, deposits or
+# writes an admission file.
+set -eu
+if [ "${1:-}" = configure ]; then
+  install -d -o root -g root -m 0700 /var/lib/linear-accountant
+fi
+exit 0
