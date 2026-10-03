@@ -751,6 +751,12 @@ impl Default for InMemoryAccountant {
     }
 }
 
+/// Durable inference accounting for the remediation consumer's model decider.
+/// Built on this core; NOT covered by the v0 Lean proof. See
+/// `docs/INFERENCE_ACCOUNTING.md`.
+#[cfg(feature = "inference")]
+pub mod inference;
+
 /// The witness layer (NQ-shaped). It reads the ledger and testifies. It takes only a
 /// read-only slice — it has no path to allocate or consume, structurally.
 pub mod witness {

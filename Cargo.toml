@@ -13,3 +13,20 @@ publish = false
 [lib]
 name = "linear_accountant"
 path = "src/lib.rs"
+
+# Inference accounting extension (src/inference.rs, src/bin/la_inference.rs).
+# The v0 core stays std-only: `--no-default-features` builds it without these.
+[features]
+default = ["inference"]
+inference = ["dep:libc", "dep:rusqlite", "dep:serde", "dep:serde_json"]
+
+[dependencies]
+libc = { version = "0.2", optional = true }
+rusqlite = { version = "0.37", features = ["bundled"], optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+[[bin]]
+name = "la_inference"
+path = "src/bin/la_inference.rs"
+required-features = ["inference"]
