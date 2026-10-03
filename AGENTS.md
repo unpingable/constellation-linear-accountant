@@ -57,6 +57,9 @@ behavior.
 
 ```
 src/lib.rs                          The conserved core (single-writer, in-memory)
+src/inference.rs                    Durable inference accounting over the core (feature `inference`)
+src/bin/la_inference.rs             Inference accounting CLI (docs/INFERENCE_ACCOUNTING.md)
+tests/la_inference_cli.rs           Drives la_inference: fences, settlement, recovery, reconcile
 tests/v0_boundary.rs                Boundary properties
 tests/file_write_workload.rs        WL-001: a real file write gated by the accountant
 tests/contention_workload.rs        WL-002: concurrent consumers race one token
@@ -82,13 +85,17 @@ If one of these breaks, something is **wrong** — not "could be improved," wron
 
 ## Coding conventions
 
-- Rust 2021 edition. No external runtime dependencies (std only).
+- Rust 2021 edition. The v0 core is std-only (`cargo build --no-default-features`).
+  The default `inference` feature (the durable inference extension,
+  `docs/INFERENCE_ACCOUNTING.md`) adds `rusqlite`, `serde`, `serde_json`, and
+  `libc`; nothing in `src/lib.rs`'s core uses them.
 - Decisions are mechanical: timestamp / integer / set-membership / equality. Nothing
   parses a story. If a code path starts reasoning about *why*, it has become a judge —
   stop.
 - Scope is matched by `==`, never containment. Any scope-hierarchy semantics belongs in
   the eligibility layer, never here.
-- Caller-supplied logical time (`Tick`). No ambient `now()`.
+- Caller-supplied logical time (`Tick`). No ambient `now()` in the library; only the
+  `la_inference` binary reads the clock (LA-owned time, rollback refused).
 - `cargo fmt` canonical; `cargo clippy --all-targets -- -D warnings` clean. Tests before
   commits — never claim tests pass without running them.
 
