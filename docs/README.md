@@ -12,6 +12,12 @@ Where to start, by what you're trying to do.
 - [`architecture/HANDOFF_PACKETS.md`](architecture/HANDOFF_PACKETS.md) — the per-tool
   packet contracts other constellation tools would use *if/when* a consumer trigger fires.
 
+## I want to account a model decider's inference spend
+
+- [`INFERENCE_ACCOUNTING.md`](INFERENCE_ACCOUNTING.md) — `la_inference`: durable
+  reserve / begin-call / settle / reconcile over the v0 core, the no-storage rule, and
+  crash recovery. Tested, not covered by the v0 Lean proof.
+
 ## I want to know what was actually proven
 
 - [`working/specimens/workload-specimens.md`](working/specimens/workload-specimens.md) —

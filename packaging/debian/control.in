@@ -1,0 +1,13 @@
+Package: linear-accountant-inference
+Version: @VERSION@
+Section: admin
+Priority: optional
+Architecture: @ARCH@
+Maintainer: Constellation contributors
+Depends: libc6
+Description: Linear Accountant durable inference accounting (la_inference)
+ Durable episode and invocation accounting for the Constellation remediation
+ consumer's model decider: owner-enrolled finite stock, per-episode
+ reservations, per-call send fences and settlements without refunds, and a
+ read-only reconcile. Installation is inert: it creates the root-only store
+ directory and installs no enrollment, admission file or credential.

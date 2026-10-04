@@ -90,6 +90,13 @@ decisions, adding **no policy** (see [`docs/LA_CLI_PROTOCOL.md`](docs/LA_CLI_PRO
 The library remains the boundary; the binary only lets an out-of-process consumer
 reach it.
 
+A second consumer trigger (Constellation agentic remediation v2, 2026-10-03) added
+`la_inference`: durable, root-owned SQLite books for one model decider's inference
+spend, built on the same `deposit` / `request_capacity` / `consume` core with no
+refunds. It is a separate binary; `la_cli` v0 is unchanged. The Lean proof does
+**not** cover this extension. See
+[`docs/INFERENCE_ACCOUNTING.md`](docs/INFERENCE_ACCOUNTING.md).
+
 ## Architecture
 
 ```

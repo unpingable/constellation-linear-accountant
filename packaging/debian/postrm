@@ -1,0 +1,5 @@
+#!/bin/sh
+# The books are the record of spent inference budget: never removed, not
+# even on purge.
+set -eu
+exit 0
