@@ -16,4 +16,4 @@ This plan routes current requirements and evidence needed for future bounded wor
 
 ## Deferred consumer decision
 
-`POST_BETA_HARDENING` · **Post-beta**. No component implementation work is selected. [LA-01](https://github.com/unpingable/cartography/issues/12) keeps the consumer/thaw decision in Cartography until a real current dispatcher requests conserved capacity. Acceptance before any new slice requires exact conservation/receipt behavior for that consumer; policy, WLP and predecessor dispatchers remain excluded.
+`POST_BETA_HARDENING` · **Post-beta**. No component implementation work is selected. LA-01 (private program record) keeps the consumer/thaw decision in Cartography until a real current dispatcher requests conserved capacity. Acceptance before any new slice requires exact conservation/receipt behavior for that consumer; policy, WLP and predecessor dispatchers remain excluded.
