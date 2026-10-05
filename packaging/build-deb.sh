@@ -18,7 +18,8 @@ d=$stage/$name
 doc=$d/usr/share/doc/linear-accountant-inference
 install -d -m 0755 "$d/DEBIAN" "$d/usr/bin" "$doc"
 install -m 0755 "$bin" "$d/usr/bin/la_inference"
-install -m 0644 "$root/docs/INFERENCE_ACCOUNTING.md" "$root/packaging/README.md" "$doc/"
+install -m 0644 "$root/docs/INFERENCE_ACCOUNTING.md" "$doc/"
+install -m 0644 "$root/packaging/OPERATOR.md" "$doc/README.md"
 install -m 0644 "$root/LICENSE" "$doc/copyright"
 sed -e "s/@VERSION@/$version/g" -e "s/@ARCH@/$arch/g" "$root/packaging/debian/control.in" > "$d/DEBIAN/control"
 for s in postinst postrm; do install -m 0755 "$root/packaging/debian/$s" "$d/DEBIAN/$s"; done

@@ -4,7 +4,7 @@ Section: admin
 Priority: optional
 Architecture: @ARCH@
 Maintainer: Constellation contributors
-Depends: libc6
+Depends: libc6, libgcc-s1
 Description: Linear Accountant durable inference accounting (la_inference)
  Durable episode and invocation accounting for the Constellation remediation
  consumer's model decider: owner-enrolled finite stock, per-episode

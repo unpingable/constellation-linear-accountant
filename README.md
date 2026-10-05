@@ -1,5 +1,20 @@
 # Linear Accountant
 
+## Current inference consumer
+
+The prepared combined candidate targets Ubuntu 22.04 amd64. Use its source-free
+[operator guide](https://github.com/unpingable/unpingable-site/blob/dev/operator-beta/constellation/combined-candidate/README.md) for download verification, exact package installation,
+separate enrollment, Workbench, currentness and day-two recovery. It is a neutral
+owner-review candidate; BC1 is not tagged or published. Component source alone
+does not install the composed product or grant authority.
+
+The separately accepted optional remediation-v2 consumer uses LA for finite
+inference reservation, send fencing, actual-usage settlement and reconciliation.
+The Workbench reveal did not exercise LA. The current optional read-only
+Workbench projection displays owner-selected accounting without store access
+or budget administration. The v0 reference core and its historical July status
+below are separate from this accepted inference extension.
+
 Public repository name: **Constellation Linear Accountant**
 (`constellation-linear-accountant`). The crate and transport binary retain their
 current names and interfaces. See [HOWTO.md](HOWTO.md) for a bounded local check.
@@ -10,7 +25,7 @@ for mandatory obligations. The [accounting / residual-viability bridge](docs/wor
 explains the bounded formal relationship and the reserve-admission behavior
 that is **not** implemented by the current stack.
 
-> **Status (2026-07-26): the Linear-Accounting / Spendability office —
+> **Historical v0 status (2026-07-26): the Linear-Accounting / Spendability office —
 > frozen reference boundary, separately instantiated, not part of the
 > current operational vertical.** This repository owns the jurisdiction "is
 > there conserved capacity, and is it burned exactly once?" — with the
