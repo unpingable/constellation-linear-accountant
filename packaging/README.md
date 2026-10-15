@@ -25,6 +25,7 @@ git archive "$commit" | tar -x -C "$src"
   cargo +1.94.0 vendor --locked vendor > .cargo/config.toml )
 docker run --rm --network none -v "$src":/work -w /work \
   -e RUSTUP_TOOLCHAIN=1.94.0 \
+  -e LA_GIT_COMMIT="$commit" -e LA_BUILD_IDENTITY="la-$commit" \
   -e SOURCE_DATE_EPOCH="$(git log -1 --format=%ct "$commit")" \
   jammy-packager:1 bash -c '
     cargo build --release --locked --offline --bin la_inference &&
