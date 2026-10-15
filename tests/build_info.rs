@@ -55,6 +55,12 @@ fn identity_option_with_extra_arguments_cannot_skip_normal_validation() {
             .output()
             .unwrap();
         assert!(!output.status.success(), "{name}: {output:?}");
-        assert!(output.stdout.is_empty(), "{name}: {output:?}");
+        let response: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+        assert_eq!(response["error"]["kind"], "usage");
+        assert_eq!(response["error"]["message"], "unknown option --build-info");
+        assert!(
+            response.get("schema").is_none(),
+            "identity probe skipped normal validation"
+        );
     }
 }
