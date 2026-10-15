@@ -147,6 +147,11 @@ fn crash_point(mode: Mode) -> Result<Option<CrashPoint>, String> {
 }
 
 fn main() -> ExitCode {
+    match linear_accountant::build_info::write_if_requested("la_inference") {
+        Ok(true) => return ExitCode::SUCCESS,
+        Ok(false) => {}
+        Err(error) => return fail("output", &error.to_string(), EXIT_PROTOCOL),
+    }
     // Every file this process creates (db, WAL, SHM, lock) is owner-only.
     // SAFETY: umask has no preconditions.
     unsafe {

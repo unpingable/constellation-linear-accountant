@@ -47,6 +47,12 @@
 //! double-spend occurred. The genuinely hard half — an anchor *outside the actor's
 //! unilateral control* — is deliberately NOT here.
 
+#[cfg(feature = "inference")]
+pub mod build_info;
+
+#[cfg(all(test, feature = "inference"))]
+mod build_identity_input;
+
 use std::collections::HashMap;
 use std::collections::HashSet;
 

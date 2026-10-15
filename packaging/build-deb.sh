@@ -11,13 +11,14 @@ case "$arch" in amd64|arm64) ;; *) exit 2;; esac
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)
 bin=$bin_dir/la_inference
 [[ -x "$bin" ]] || { echo "missing binary $bin" >&2; exit 2; }
-"$bin" version >/dev/null || { echo "la_inference version failed" >&2; exit 2; }
 mkdir -p "$out_dir"; stage=$(mktemp -d "$out_dir/.stage.XXXXXX"); trap 'rm -rf "$stage"' EXIT
 name=linear-accountant-inference_${version}_${arch}
 d=$stage/$name
 doc=$d/usr/share/doc/linear-accountant-inference
 install -d -m 0755 "$d/DEBIAN" "$d/usr/bin" "$doc"
 install -m 0755 "$bin" "$d/usr/bin/la_inference"
+python3 "$root/packaging/record-build-identity.py" "$d/usr/bin" "$version" "$arch" \
+  "$doc/build-identity.json"
 install -m 0644 "$root/docs/INFERENCE_ACCOUNTING.md" "$doc/"
 install -m 0644 "$root/packaging/OPERATOR.md" "$doc/README.md"
 install -m 0644 "$root/LICENSE" "$doc/copyright"
@@ -25,5 +26,6 @@ sed -e "s/@VERSION@/$version/g" -e "s/@ARCH@/$arch/g" "$root/packaging/debian/co
 for s in postinst postrm; do install -m 0755 "$root/packaging/debian/$s" "$d/DEBIAN/$s"; done
 find "$d" -exec touch -h -d "@${SOURCE_DATE_EPOCH:-0}" {} +
 dpkg-deb --root-owner-group --build "$d" "$out_dir/$name.deb" >/dev/null
+install -m 0644 "$doc/build-identity.json" "$out_dir/$name.build-identity.json"
 ( cd "$out_dir" && sha256sum "$name.deb" > "$name.deb.sha256" )
 echo "built $out_dir/$name.deb"
