@@ -7,10 +7,13 @@ operational effect authority and refunds no consumed capacity.
 
 This package is inert: no enrollment, budget, store or provider credential ships.
 The custodian manages the root-owned store and imports its separate owner
-admission. `la_inference version` identifies the native protocol/schema; its
-legacy crate version0.0.0/unknown commit is distinct from this Debian artifact
-revision. Use `dpkg-query -W linear-accountant-inference` and the combined
-candidate's exact executable/source/hash manifest for identity.
+admission. `la_inference version` retains its native protocol/schema response.
+`la_inference --build-info` reports embedded source/build/compiler/target/profile
+identity before store access; `--version` and `-V` print the version and source.
+Compare installed executable hashes and probe output with
+`/usr/share/doc/linear-accountant-inference/build-identity.json` and the package's
+matching sidecar receipt. Missing development declarations remain unknown and
+cannot be packaged. These are builder declarations, not source attestation.
 
 See [native inference protocol](INFERENCE_ACCOUNTING.md) for source-defined
 commands/units/refusals. Only the existing store custodian may invoke those
